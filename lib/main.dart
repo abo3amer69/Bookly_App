@@ -19,7 +19,7 @@ class BooklyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData().copyWith(scaffoldBackgroundColor: KprimaryColor),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: KprimaryColor),
       home: const SplashViews(),
     );
   }
