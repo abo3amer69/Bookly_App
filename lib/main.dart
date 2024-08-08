@@ -3,11 +3,10 @@ import 'package:bookly_app/constant.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(DevicePreview(
-    enabled: true,
-    builder: (context)=> BooklyApp()));
+  runApp(DevicePreview(enabled: true, builder: (context) => BooklyApp()));
 }
 
 class BooklyApp extends StatelessWidget {
@@ -19,7 +18,10 @@ class BooklyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: KprimaryColor),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: KprimaryColor,
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+      ),
       home: const SplashViews(),
     );
   }
