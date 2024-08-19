@@ -12,7 +12,8 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(DevicePreview(enabled: true, builder: (context) => BooklyApp()));
+  setupServiceLocator();
+  runApp(DevicePreview(enabled: true, builder: (context) => const BooklyApp()));
 }
 
 class BooklyApp extends StatelessWidget {
@@ -25,7 +26,7 @@ class BooklyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..fetchFeaturedBooks()
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
