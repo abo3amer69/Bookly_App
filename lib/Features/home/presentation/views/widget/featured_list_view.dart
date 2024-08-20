@@ -21,10 +21,12 @@ class featureBoxListView extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return  Padding(
-                  padding:const EdgeInsets.symmetric(horizontal: 8),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: CustomBookImage(
-                    imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '',
                   ),
                 );
               },
