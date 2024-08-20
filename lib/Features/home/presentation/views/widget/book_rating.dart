@@ -7,7 +7,7 @@ class Bookating extends StatelessWidget {
       {super.key, this.mainAxisAlignment = MainAxisAlignment.start, required this.rating, required this.count});
 
   final MainAxisAlignment mainAxisAlignment;
-  final int rating;
+  final num rating;
   final int count;
 
   @override
