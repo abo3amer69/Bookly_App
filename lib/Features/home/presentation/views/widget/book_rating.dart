@@ -4,7 +4,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Bookating extends StatelessWidget {
   const Bookating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start, required this.rating, required this.count});
+      {super.key,
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      required this.rating,
+      required this.count});
 
   final MainAxisAlignment mainAxisAlignment;
   final num rating;
@@ -23,7 +26,7 @@ class Bookating extends StatelessWidget {
         const SizedBox(
           width: 6.3,
         ),
-         Text(
+        Text(
           rating.toString(),
           style: Styles.textStyle16,
         ),

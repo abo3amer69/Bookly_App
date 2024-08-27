@@ -14,7 +14,6 @@ class similarBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
       builder: (context, state) {
-        
         if (state is SimilarBooksSuccess) {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .15,
@@ -22,11 +21,12 @@ class similarBooksListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return  Padding(
-                  padding:const EdgeInsets.symmetric(horizontal: 5),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomBookImage(
                     imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail?? '',
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '',
                   ),
                 );
               },
