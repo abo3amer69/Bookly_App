@@ -1,4 +1,5 @@
-import 'package:bookly_app/Features/search/data/model/book_Search/book.search.dart';
+import 'package:bookly_app/Features/search/data/model/book/book.search.dart';
+
 import 'package:bookly_app/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 
