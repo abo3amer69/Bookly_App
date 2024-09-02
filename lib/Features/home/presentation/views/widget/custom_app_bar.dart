@@ -1,3 +1,5 @@
+import 'package:bookly_app/Features/search/presentation/views/search_view.dart';
+import 'package:bookly_app/core/model/book_model/book_model.dart';
 import 'package:bookly_app/core/utilis/app_router.dart';
 import 'package:bookly_app/core/utilis/assets.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +7,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  final List<BookModel> books;
+  const CustomAppBar({super.key, required this.books});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,13 @@ class CustomAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.KSearchView);
+              // GoRouter.of(context).push(AppRouter.KSearchView ,);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SearchViews(
+                            books: books,
+                          )));
             },
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,

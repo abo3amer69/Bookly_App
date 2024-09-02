@@ -1,9 +1,11 @@
-import 'package:bookly_app/Features/search/data/model/book/book.search.dart';
+
+
 
 import 'package:bookly_app/core/errors/failure.dart';
+import 'package:bookly_app/core/model/book_model/book_model.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class SearchRepo {
-  Future<Either<Failure, List<BookSearch>>> fetchSearchBooks(
-      {required String booklist});
+  Future<Either<Failure, List<BookModel>>> fetchSearchBooks(
+      {required String booksearch});
 }
